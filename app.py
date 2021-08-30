@@ -1,31 +1,39 @@
 # importing libraries
 from flask import Flask,redirect,url_for,request,render_template,session
-from flask_mail import mail, Message
+from flask_mail import Mail, Message
+# from Flask-Ext import Mail
 app = Flask(__name__)
+mail = Mail(app) # instantiate the mail class
+   
+# configuration of mail
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'feedbackcesa@gmail.com'
+app.config['MAIL_PASSWORD'] = 'feedbackcesa@321'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
 
 @app.route('/',methods=['POST', 'GET'])
 def index():
-	if request.method=='POST':
-		name = request.form['name']
+    if request.method=='POST':
+        name = request.form['name']
         email = request.form['email']
         subject = request.form['subject']
         message = request.form['message']
-        fav_char = request.form['fav_char']
-        rating = request.form['radio1']
-        feedback = request.form['feedback']
-        # print(name,email,screen_name,genre,fav_char,rating,feedback)
-        if name=='' or email=='' or subject==0:
+        if name=='' or email=='' or subject=='':
             return render_template('index.html',message='Please enter required fields')
-		msg = Message(
-                'Hello',
+        msg = Message(
+                subject,
                 sender ='yourId@gmail.com',
-                recipients = ['reciever’sid@gmail.com']
+                recipients = ['cesa.vidyalankar@gmail.com']
                )
-		msg.body = 'Hello Flask message sent from Flask-Mail'
-		mail.send(msg)
-		return render_template('index.html')
-	else:
-		return render_template('index.html')
+        msg.body = 'Name:'+ name + '\n' + 'Email: ' + email + '\n' 'Message:\n' + message
+        # msg = Message(subject, sender = email, recipients = ['cesa.vidyalankar@gmail.com'])
+        # msg.body = message
+        mail.send(msg)
+        return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/events')
 def events():

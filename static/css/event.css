@@ -355,56 +355,150 @@ nav a:nth-child(3):hover ~ #indicator
   overflow: hidden;
 } 
 
+/* footer */
+footer{
+    width: 100%;
+    height: auto;
+    background-color:black;
+    color: rgba(240, 248, 255, 0.596);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    }
+    footer .box_1{
+    width: 300px;
+    height:fit-content;
+    margin: 10px;
+    padding: 10px;
+    }
+    footer p{
+    font-size: large;
+    color: rgba(240, 248, 255, 0.596);
+    }
+    footer .box_2{
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    }
+    footer .box_3{
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    }
+    footer .box_3 ul li{
+    list-style: none;
+    font-size: large;
+    }
+    footer .box_4{
+    width: 300px;
+    text-align: center;
+    margin: 10px;
+    height: fit-content;
+    }
+    footer .box_4 p{
+    margin: auto;
+    margin-top: 10px;
 
-/* FOOTER */
-/* @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
-
-body {
-    background: linear-gradient(0deg, #fff, 50%, #DEEEFE);
-    font-family: 'Rubik', sans-serif;
-    background: #455A64;
-    height: 100 !important
-} */
-
-.container-fluid {
-    overflow: hidden;
-    margin-top: 250px;
-    background: #262626;
-    color: #627482 !important;
-    margin-bottom: 0;
-    padding-bottom: 0
-}
-
-small {
-    font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important
-}
-
-.bold-text {
-    color: #989c9e !important
-}
-
-.mt-55 {
-    margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important
-}
-
-h3 {
-    font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important
-}
-
-.social {
-    font-size: 21px !important
-}
-
-.rights {
-    font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
-}
-
-/* Start Social Media Icons */
-.social-svg:hover{
-    transform: scale(
-      1.5
-    );
-    margin: 20px;
+    }
+    footer .box_4 i{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    font-size: 20px;
+    }
+    footer .box_4 p .fab:hover{
+    transform: scale(1.1);
+    }
+    footer .box_4 a:nth-child(1){
+    color:rgb(182, 33, 182);
+    }
+    footer .box_4 a:nth-child(2){
+    color:blue;
+    }
+    footer .box_4 a:nth-child(3){
+    color:red;
+    }
+    footer .box_4 a:nth-child(4){
+    color:rgb(0, 119, 255);
+    }
+    footer .box_4 a:nth-child(5){
+    color:blue;
+    }
+    /* Menu */
+      
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+      }
+      
+      a {
+        text-decoration: none;
+      }
+      
+      .menu-hover-fill li {
+        position: relative;
+      }
+      .menu-hover-fill li::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: -1rem;
+        width: 0.25rem;
+        height: 100%;
+        background: #fff;
+        color: #fff;
+        transition: 0.6s;
+      }
+      .menu-hover-fill li a {
+        --menu-link-color: #cfcfcf;
+        position: relative;
+        background: linear-gradient(blue 0 100%) left/0 no-repeat;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        transition: background-size 0.45s 0.04s;
+        color: #cfcfcf;
+      }
+      .menu-hover-fill li a::before {
+        position: absolute;
+        content: attr(data-text);
+        z-index: -1;
+        color: var(--menu-link-color);
+      }
+      /* .menu-hover-fill li {
+        --menu-link-active-color: #fff;
+      }
+       .menu-hover-fill li:nth-child(2) {
+        --menu-link-active-color: crimson;
+      }
+      .menu-hover-fill li:nth-child(3) {
+        --menu-link-active-color: var(--success-color);
+      }
+      .menu-hover-fill li:nth-child(4) {
+        --menu-link-active-color: var(--warning-color);
+      }
+      .menu-hover-fill li:nth-child(5) {
+        --menu-link-active-color: var(--danger-color);
+      }  */
+      .menu-hover-fill li:hover::before {
+        left: calc(100% + 1rem);
+      }
+      .menu-hover-fill li:hover a {
+        background-size: 100%;
+      }
+    /* Social Media */
+    .social-links{
+        text-decoration: none;
+    }
+    /* Start Social Media Icons */
+    .social-svg:hover{
+        transform: scale(
+        1.5
+        );
+        margin: 5px;
   }
 /* End Footer */
 
@@ -474,8 +568,9 @@ h3 {
     -o-transform: translateY(0);
   }
   .card__description {
-    width: 300px;
-    overflow: visible;
+    width: 250px;
+    overflow:scroll;
+    padding-bottom: 100px !important;
   }
   .card__title{
       font-size:small !important;
