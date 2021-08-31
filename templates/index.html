@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CESA VIT</title>
-    <link rel="stylesheet" href="../static/css/style.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/style.css"> 
+    <link rel="stylesheet" href="/static/css/chatbot.css">   
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/e88a79e71b.js" crossorigin="anonymous"></script>
+
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
@@ -90,6 +95,57 @@
           </div>
         
     </section>
+
+    <div class="chat-bar-collapsible">
+      <button id="chat-button" class="btn btn-circle btn-md float expand" type="button">
+          <i id="chat-icon" class="fa fa-send"></i>
+      </button>
+
+      <div class="chat-content">
+          <!-- <button id="chat-button" type="button" class="collapsible">
+              <i id="chat-icon" class="fa fa-fw fa-comments-o"></i>   
+          </button> -->
+          <div class="full-chat-block">
+              <!-- Expanded chat area container -->
+              <div class="outer-container">
+                  <div class="chat-container">
+                      
+                      <!-- Chat history area -->
+                      <div id="chatbox">
+                          <h6 id="chat-timestamp"></h6>
+                          <p id="botStarterMessage" class="bot-text"><span>Hello. This is your helper...</span></p>
+                      </div>
+
+                      
+                      <!-- User input area -->
+                      <div class="chat-bar-input-block">
+                          
+                              <div id="userInput">
+                                  <input type="text" name="msg" id="textInput" class="input-box" placeholder="Type here...">
+                                  <p></p>
+                              </div>
+                              
+                              <div class="chat-bar-icons">
+                                  <!-- <button class="btn" type="submit">
+                                      <i id="chat-send-icon" class="fa fa-fw fa-send"></i>
+                                  </button> -->
+                                  
+                                  <button id="chat-button" class="btn btn-circle send-button" type="button" onclick="sendButton()">
+                                      <i id="chat-icon"  class="fa fa-send"></i>
+                                  </button>
+                              </div>
+
+                      </div>
+                      
+                      <div id="chat-bar-bottom">
+                          <p></p>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
 
     <!-- about section start -->
     <section class="about" id="about">
@@ -634,6 +690,9 @@ card6.addEventListener('mouseleave', leaveCard6, false);
 
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/static/js/chat.js"></script>
+<script src="/static/js/responses.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script type='text/javascript' src='../static/js/jquery.particleground.js'></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
